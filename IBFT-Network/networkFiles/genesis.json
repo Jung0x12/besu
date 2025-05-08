@@ -1,0 +1,21 @@
+{
+  "config" : {
+    "chainId" : 20258505,
+    "shanghaiTime" : 0,
+    "zeroBaseFee" : true,
+    "ibft2" : {
+      "blockperiodseconds" : 12,
+      "epochlength" : 30000,
+      "requesttimeoutseconds" : 18,
+      "blockreward" : "0x0"
+    },
+    "contractSizeLimit" : 2147483647
+  },
+  "nonce" : "0x0",
+  "timestamp" : "0x67748580",
+  "gasLimit" : "0x1fffffffffffff",
+  "difficulty" : "0x1",
+  "mixHash" : "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "alloc" : { },
+  "extraData" : "0xf893a00000000000000000000000000000000000000000000000000000000000000000f86994d3863e943c21416a185c46f097d69637844fd1d994aac920650d2ef0410c3b209ca21e4ac9662a96fc942ad5f1441411eb0f963d81c0d6e7de8212db9d8094d4013c6ce1981c66dc6672398c5768d19e1d7869942859e9d9422b1f86fb2305613adcb46fd1daef15808400000000c0"
+}
