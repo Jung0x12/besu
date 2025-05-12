@@ -1,7 +1,7 @@
 import { createInterface } from "readline/promises";
 import { 
   createPublicClient, 
-  createWalletClient, 
+  createWalletClient,
   http, 
   parseAbi, 
   parseUnits, 
@@ -172,9 +172,8 @@ async function createToken() {
     const initialOwner = initialOwnerInput ? toHexAddress(initialOwnerInput) : userAddress;
     
     console.log(`Creating token ${name} (${symbol})...`);
-    
-    // Create token by calling the contract
-    const hash = await walletClient.writeContract({
+
+    const { request } = await publicClient.simulateContract({
       address: toHexAddress(config.tokenFactoryAddress),
       abi: TOKEN_FACTORY_ABI,
       functionName: 'createToken',
@@ -182,6 +181,9 @@ async function createToken() {
       chain: besuChain,
       account: account,
     });
+    
+    // Create token by calling the contract
+    const hash = await walletClient.writeContract(request);
     
     console.log(`Transaction sent: ${hash}`);
     console.log("Waiting for transaction confirmation...");
